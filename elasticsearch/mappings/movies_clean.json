@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "movies_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "stop", "snowball"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "id":                   { "type": "integer" },
+      "title":                { "type": "text", "analyzer": "movies_analyzer" },
+      "genres":               { "type": "keyword" },
+      "original_language":    { "type": "keyword" },
+      "overview":             { "type": "text", "analyzer": "movies_analyzer" },
+      "popularity":           { "type": "float" },
+      "release_date":         { "type": "date" },
+      "budget":               { "type": "long" },
+      "revenue":              { "type": "long" },
+      "runtime":              { "type": "integer" },
+      "status":               { "type": "keyword" },
+      "tagline":              { "type": "text" },
+      "vote_average":         { "type": "float" },
+      "vote_count":           { "type": "integer" },
+      "keywords":             { "type": "keyword" },
+      "production_companies": { "type": "keyword" }
+    }
+  }
+}
